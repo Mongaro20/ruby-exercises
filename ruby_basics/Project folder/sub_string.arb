@@ -1,0 +1,18 @@
+def substrings(new_word, array)
+
+  new_hash = {}
+  lowered_text = new_word.downcase
+
+  array.each do |word|
+    matches = lowered_text.scan(word).length
+    new_hash[word] = matches unless matches == 0
+  end
+
+  new_hash
+end
+
+
+words = ["below","down","go","going","horn","how","howdy","it","i","low","own","part","partner","sit"]
+result = substrings("Howdy partner, sit down! How's it going?", words)
+puts result.inspect
+
